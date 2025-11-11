@@ -136,8 +136,10 @@
     /* Theme Toggle Button Styles */
     .theme-toggle {
         position: fixed !important;
-        bottom: 20px !important;
-        right: 20px !important;
+        /* Place above the back-to-top button (which sits at 2rem from bottom and is ~3rem tall) */
+        bottom: calc(2rem + 3.75rem) !important; /* 60px above bottom */
+        right: 2rem !important;
+        top: auto !important; /* Cancel any conflicting top rules in other styles */
         z-index: 1200 !important;
         background: var(--accent-primary);
         color: white;
@@ -164,8 +166,8 @@
     
     @media (max-width: 768px) {
         .theme-toggle {
-            bottom: 15px !important;
-            right: 15px !important;
+            bottom: calc(2rem + 3.5rem) !important; /* keep above back-to-top on tablets */
+            right: 1.5rem !important;
             width: 40px;
             height: 40px;
         }
@@ -173,8 +175,8 @@
     
     @media (max-width: 576px) {
         .theme-toggle {
-            bottom: 10px !important;
-            right: 10px !important;
+            bottom: calc(2rem + 3rem) !important; /* tighter spacing for phones */
+            right: 1rem !important;
             width: 35px;
             height: 35px;
         }
