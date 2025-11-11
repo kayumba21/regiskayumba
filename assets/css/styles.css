@@ -7,6 +7,31 @@
     padding: 0;
 }
 
+/* === Final Theme Toggle Position Override (Global) === */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1200;
+}
+
+@media (max-width: 768px) {
+    .theme-toggle {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .theme-toggle {
+        bottom: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+    }
+}
 html {
     scroll-behavior: smooth;
     font-size: 16px;
@@ -334,18 +359,26 @@ body {
 }
 
 .resume-btn {
-    background: #009ca3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-primary);
     color: white;
-    border: 1px solid var(--accent-primary);
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius-base);
-    transition: all var(--transition-base);
+    padding: 0.5rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 173, 181, 0.2);
+    transition: all 0.3s ease;
+    border: none;
+    letter-spacing: 0.025em;
 }
 
 .resume-btn:hover {
-    background: var(--accent-primary);
+    background: #009ca3;
     color: white;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 173, 181, 0.3);
 }
 
 .resume-btn::after {
@@ -1143,70 +1176,172 @@ body {
         grid-template-columns: 1fr;
         gap: var(--space-lg);
     }
-}
-
-@media (max-width: 768px) {
-    :root {
-        --container-padding: 1rem;
-        --font-size-5xl: 2.5rem;
-        --font-size-4xl: 2rem;
-        --font-size-3xl: 1.5rem;
+    
+    /* ===== MEDIA QUERIES ===== */
+    @media (max-width: 1200px) {
+        .container {
+            max-width: 90%;
+        }
+        
+        .theme-toggle {
+            right: 20px;
+        }
     }
-
-    .nav-toggle {
-        display: flex;
+    
+    @media (max-width: 992px) {
+        html {
+            font-size: 15px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.1rem;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+        }
+        
+        /* Improved navbar for tablets */
+        .navbar-collapse {
+            background-color: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        .theme-toggle {
+            top: 15px;
+            right: 15px;
+        }
     }
-
-    .nav-menu {
-        position: fixed;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--bg-primary);
-        flex-direction: column;
-        padding: var(--space-xl);
-        border-top: 1px solid var(--border-color);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all var(--transition-base);
+    
+    @media (max-width: 768px) {
+        html {
+            font-size: 14px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+        }
+        
+        .project-card {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-form {
+            padding: 1.5rem;
+        }
+        
+        /* Mobile navigation improvements */
+        .navbar-collapse {
+            background-color: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .navbar-nav .nav-link {
+            padding: 0.75rem 1rem;
+            border-radius: 0.25rem;
+            margin: 0.25rem 0;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background-color: var(--bg-tertiary);
+        }
+        
+        /* Adjust theme toggle for mobile */
+        .theme-toggle {
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+        }
+        
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
     }
-
-    .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
+    
+    @media (max-width: 576px) {
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+        
+        .hero-content p {
+            font-size: 1rem;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+        }
+        
+        .skill-item {
+            width: 100%;
+        }
+        
+        /* Improved spacing for small devices */
+        .section {
+            padding: 3rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: 1.2rem;
+        }
+        
+        /* Better touch targets for mobile */
+        .nav-link, 
+        .btn,
+        .form-control {
+            padding: 0.75rem;
+        }
+        
+        /* Adjust theme toggle for small mobile */
+        .theme-toggle {
+            top: 10px;
+            right: 10px;
+            width: 38px;
+            height: 38px;
+        }
     }
-
-    .nav-toggle.active .hamburger-line:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .nav-toggle.active .hamburger-line:nth-child(2) {
-        opacity: 0;
-    }
-
-    .nav-toggle.active .hamburger-line:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    .hero-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .experience-tabs {
-        flex-wrap: wrap;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        gap: var(--space-lg);
-        text-align: center;
+    
+    /* Extra small devices */
+    @media (max-width: 360px) {
+        .hero-content h1 {
+            font-size: 2.2rem;
+        }
+        
+        .section-title {
+            font-size: 1.6rem;
+        }
+        
+        .container {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+        }
+        
+        /* Ensure theme toggle is accessible but not intrusive */
+        .theme-toggle {
+            top: 10px;
+            right: 10px;
+            width: 35px;
+            height: 35px;
+        }
+        
+        .theme-toggle svg {
+            width: 18px;
+            height: 18px;
+        }
     }
 }
 
@@ -1229,6 +1364,49 @@ body {
 
     .modal-body {
         padding: var(--space-xl);
+    }
+    
+    .theme-toggle {
+        top: 15px;
+        right: 55px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .theme-toggle svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    /* Ensure all content fits within the screen */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+    }
+    
+    /* Improve touch targets for mobile */
+    .nav-link, .btn, .social-link, .project-link {
+        padding: 0.75rem;
+    }
+}
+
+/* Fix for very small screens */
+@media (max-width: 360px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .hero-name {
+        font-size: 1.75rem;
+    }
+    
+    .hero-title {
+        font-size: 1.1rem;
+    }
+    
+    .theme-toggle {
+        right: 50px;
     }
 }
 
