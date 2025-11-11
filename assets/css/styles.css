@@ -10,15 +10,17 @@
 /* === Final Theme Toggle Position Override (Global) === */
 .theme-toggle {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    /* Place above the back-to-top button */
+    bottom: calc(2rem + 3.75rem);
+    right: 2rem;
+    top: auto; /* neutralize earlier top-based rules */
     z-index: 1200;
 }
 
 @media (max-width: 768px) {
     .theme-toggle {
-        bottom: 15px;
-        right: 15px;
+        bottom: calc(2rem + 3.5rem);
+        right: 1.5rem;
         width: 40px;
         height: 40px;
     }
@@ -26,8 +28,8 @@
 
 @media (max-width: 576px) {
     .theme-toggle {
-        bottom: 10px;
-        right: 10px;
+        bottom: calc(2rem + 3rem);
+        right: 1rem;
         width: 35px;
         height: 35px;
     }
@@ -507,12 +509,45 @@ body {
 }
 
 .about-content {
-    display: block;
-    max-width: 800px; /* adjust if needed */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-4xl);
+    max-width: 1000px;
     margin: 0 auto;
-    width: 150%;
+    width: 100%;
     text-align: left;
     padding: var(--space-3xl);
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 300px;
+}
+
+@media (max-width: 991px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-2xl);
+        padding: var(--space-xl);
+    }
+    .about-text {
+        flex: none;
+        width: 100%;
+    }
+    .about-image {
+        flex: none;
+        max-width: 80%;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
 }
 
 
@@ -674,7 +709,7 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax for better mobile flow */
     gap: var(--space-2xl);
     margin-bottom: var(--space-3xl);
 }
@@ -799,6 +834,14 @@ body {
     gap: var(--space-4xl);
     max-width: 1000px;
     margin: 0 auto;
+}
+
+/* Add media query for contact section in styles.css for smaller screens */
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+    }
 }
 
 .contact-info {
