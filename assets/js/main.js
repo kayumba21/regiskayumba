@@ -20,28 +20,53 @@ document.addEventListener('DOMContentLoaded', function() {
 // ===== NAVIGATION FUNCTIONALITY =====
 function initNavigation() {
     const navbar = document.getElementById('navbar');
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
-
-    // Sticky navbar on scroll
+    const navToggle = document.getElementById('nav-toggle');
+    const navbarCollapse = document.getElementById('navbarNav');
+    const mobileOverlay = document.getElementById('mobile-menu-overlay');
+    
+    // Sticky navbar: keep header visible at all times
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Add scrolled class for styling, but never hide the navbar
+        if (scrollTop > 100) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
+
+        // Ensure navbar is always visible
+        navbar.style.transform = 'translateY(0)';
     });
 
     // Mobile menu toggle
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function() {
-            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-            navToggle.setAttribute('aria-expanded', !isExpanded);
-            navToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
+    navToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navbarCollapse.classList.toggle('show');
+        mobileOverlay.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+    });
+    
+    // Close mobile menu when clicking overlay
+    mobileOverlay.addEventListener('click', function() {
+        navToggle.classList.remove('active');
+        navbarCollapse.classList.remove('show');
+        mobileOverlay.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    });
+
+    // Close mobile menu when clicking a nav link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                navToggle.classList.remove('active');
+                navbarCollapse.classList.remove('show');
+                mobileOverlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
         });
-    }
+    });
 
     // Smooth scroll for navigation links
     navLinks.forEach(link => {
