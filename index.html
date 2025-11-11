@@ -24,6 +24,9 @@
     <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,44 +34,185 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/mobile.css">
 
     <!-- Preload critical resources -->
     <link rel="preload" href="./assets/css/styles.css" as="style">
     <link rel="preload" href="./assets/js/main.js" as="script">
+    
+    <!-- Theme Toggle Styles -->
+    <style>
+        [data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-tertiary: #e9ecef;
+            --bg-card: #f1f3f5;
+            --bg-overlay: rgba(255, 255, 255, 0.95);
+            
+            --text-primary: #212529;
+            --text-secondary: #495057;
+            --text-muted: #6c757d;
+            --text-accent: #0d6efd;
+            
+            --accent-primary: #0d6efd;
+            --accent-secondary: #6610f2;
+            --accent-tertiary: #198754;
+            
+            --border-color: #dee2e6;
+            --border-hover: #adb5bd;
+            
+            --success: #198754;
+            --warning: #ffc107;
+            --error: #dc3545;
+        }
+        
+        .theme-toggle {
+            position: fixed !important;
+            bottom: 20px !important;
+            right: 20px !important;
+            z-index: 1200 !important;
+            background: var(--accent-primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+        
+        .theme-toggle:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb, 13, 110, 253), 0.25);
+        }
+        
+        .theme-toggle svg {
+            width: 22px;
+            height: 22px;
+        }
+        
+        /* Animation for theme toggle */
+        .theme-toggle .sun-icon-circle,
+        .theme-toggle .sun-icon-line,
+        .theme-toggle .moon-icon {
+            transition: all 0.3s ease;
+        }
+    </style>
 </head>
 <body>
     <!-- Skip to main content for accessibility -->
 
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme">
+        <!-- Moon icon for dark mode -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <!-- Sun icon for light mode -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon" style="display:none;">
+            <circle cx="12" cy="12" r="5" class="sun-icon-circle"></circle>
+            <line x1="12" y1="1" x2="12" y2="3" class="sun-icon-line"></line>
+            <line x1="12" y1="21" x2="12" y2="23" class="sun-icon-line"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" class="sun-icon-line"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" class="sun-icon-line"></line>
+            <line x1="1" y1="12" x2="3" y2="12" class="sun-icon-line"></line>
+            <line x1="21" y1="12" x2="23" y2="12" class="sun-icon-line"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" class="sun-icon-line"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" class="sun-icon-line"></line>
+        </svg>
+    </button>
+
+    <style>
+    /* Theme Toggle Button Styles */
+    .theme-toggle {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 1200 !important;
+        background: var(--accent-primary);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .theme-toggle:hover {
+        transform: scale(1.1);
+    }
+    
+    .theme-toggle:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.4);
+    }
+    
+    @media (max-width: 768px) {
+        .theme-toggle {
+            bottom: 15px !important;
+            right: 15px !important;
+            width: 40px;
+            height: 40px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .theme-toggle {
+            bottom: 10px !important;
+            right: 10px !important;
+            width: 35px;
+            height: 35px;
+        }
+    }
+    </style>
+
     <!-- Navigation -->
-    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo" aria-label="Home">
+    <nav class="navbar navbar-expand-lg" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container nav-container">
+            <a href="#home" class="navbar-brand nav-logo" aria-label="Home">
                 <span class="logo-text">Regis's Repository</span>
             </a>
 
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
+            <button class="navbar-toggler" id="nav-toggle" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
 
-            <ul class="nav-menu" id="nav-menu" role="menubar">
-                <li class="nav-item" role="none">
-                    <a href="#about" class="nav-link" role="menuitem">About</a>
-                </li>
-                <li class="nav-item" role="none">
-                    <a href="#experience" class="nav-link" role="menuitem">Experience</a>
-                </li>
-                <li class="nav-item" role="none">
-                    <a href="#projects" class="nav-link" role="menuitem">Projects</a>
-                </li>
-                <li class="nav-item" role="none">
-                    <a href="#contact" class="nav-link" role="menuitem">Contact</a>
-                </li>
-                <li class="nav-item" role="none">
-                    <a href="./assets/documents/Igirimbabazi_Kayumba_Regis_CV.pdf" class="nav-link resume-btn" role="menuitem" download="Igirimbabazi_Kayumba_Regis_CV.pdf">Resume</a>
-                </li>
-            </ul>
+            <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto nav-menu" id="nav-menu" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a href="#about" class="nav-link" role="menuitem">About</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="#experience" class="nav-link" role="menuitem">Experience</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="#projects" class="nav-link" role="menuitem">Projects</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="#contact" class="nav-link" role="menuitem">Contact</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="./assets/documents/Igirimbabazi_Kayumba_Regis_CV.pdf" class="resume-btn" role="menuitem" download="Igirimbabazi_Kayumba_Regis_CV.pdf">Resume</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -156,7 +300,7 @@
                 <div class="experience-content">
                     <div class="experience-tabs">
                         <button class="tab-button active" data-tab="it-support">IT Support</button>
-                        <button class="tab-button" data-tab="hr">Human Resources/ IT support/ Logistic Officer</button>
+                        <button class="tab-button" data-tab="hr"> Junior IT support/ HR Assistant/ Logistic Officer</button>
                         <button class="tab-button" data-tab="sales">Sales</button>
                         <button class="tab-button" data-tab="customer-service">Customer Service</button>
                     </div>
@@ -616,6 +760,44 @@
     </div>
 
     <!-- JavaScript -->
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/main.js"></script>
+    
+    <!-- Theme Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const moonIcon = document.querySelector('.moon-icon');
+            const sunIcon = document.querySelector('.sun-icon');
+            
+            // Check for saved theme preference or use default
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+            
+            // Apply the saved theme on page load
+            if (currentTheme === 'light') {
+                document.body.setAttribute('data-theme', 'light');
+                moonIcon.style.display = 'none';
+                sunIcon.style.display = 'block';
+            }
+            
+            // Toggle theme when button is clicked
+            themeToggle.addEventListener('click', function() {
+                if (document.body.getAttribute('data-theme') === 'light') {
+                    // Switch to dark theme
+                    document.body.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'dark');
+                    moonIcon.style.display = 'block';
+                    sunIcon.style.display = 'none';
+                } else {
+                    // Switch to light theme
+                    document.body.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                    moonIcon.style.display = 'none';
+                    sunIcon.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
