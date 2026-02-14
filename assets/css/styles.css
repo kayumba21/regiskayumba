@@ -1,4 +1,4 @@
-/* ===== CSS RESET & BASE STYLES ===== */
+
 *,
 *::before,
 *::after {
@@ -7,13 +7,12 @@
     padding: 0;
 }
 
-/* === Final Theme Toggle Position Override (Global) === */
 .theme-toggle {
     position: fixed;
-    /* Place above the back-to-top button */
+
     bottom: calc(2rem + 3.75rem);
     right: 2rem;
-    top: auto; /* neutralize earlier top-based rules */
+    top: auto;
     z-index: 1200;
 }
 
@@ -49,9 +48,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* ===== CSS CUSTOM PROPERTIES ===== */
 :root {
-    /* Modern Color Palette */
+
     --bg-primary: #0f0f23;
     --bg-secondary: #1a1a2e;
     --bg-tertiary: #16213e;
@@ -74,7 +72,6 @@ body {
     --warning: #f59e0b;
     --error: #ef4444;
 
-    /* Modern Typography */
     --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
@@ -89,7 +86,6 @@ body {
     --font-size-5xl: 3rem;
     --font-size-6xl: 3.75rem;
 
-    /* Refined Spacing */
     --space-xs: 0.25rem;
     --space-sm: 0.5rem;
     --space-md: 1rem;
@@ -100,30 +96,25 @@ body {
     --space-4xl: 6rem;
     --space-5xl: 8rem;
 
-    /* Layout */
     --container-max-width: 1200px;
     --container-padding: 2rem;
     --section-padding: 6rem 0;
 
-    /* Transitions */
     --transition-fast: 0.15s ease-in-out;
     --transition-base: 0.3s ease-in-out;
     --transition-slow: 0.5s ease-in-out;
 
-    /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 
-    /* Border radius */
     --radius-sm: 0.25rem;
     --radius-base: 0.5rem;
     --radius-lg: 0.75rem;
     --radius-xl: 1rem;
     --radius-full: 9999px;
 
-    /* Z-index */
     --z-dropdown: 1000;
     --z-sticky: 1020;
     --z-fixed: 1030;
@@ -133,7 +124,6 @@ body {
     --z-tooltip: 1070;
 }
 
-/* ===== UTILITY CLASSES ===== */
 .container {
     max-width: var(--container-max-width);
     margin: 0 auto;
@@ -183,7 +173,7 @@ body {
     font-weight: 500;
     text-decoration: none;
     border: none;
-    border-radius: 12px; /* Smooth rounded edges */
+    border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
@@ -200,7 +190,7 @@ body {
 }
 
 .btn-primary:hover {
-    background: #009ca3; /* Slightly darker shade */
+    background: #009ca3;
     box-shadow: 0 4px 12px rgba(0, 173, 181, 0.3);
     transform: translateY(-1px);
 }
@@ -255,7 +245,6 @@ body {
     top: 6px;
 }
 
-/* ===== NAVIGATION ===== */
 .navbar {
     position: fixed;
     top: 0;
@@ -316,6 +305,227 @@ body {
     cursor: pointer;
     padding: 0.5rem;
 }
+
+[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    --bg-card: #f1f3f5;
+    --bg-overlay: rgba(255, 255, 255, 0.95);
+
+    --text-primary: #212529;
+    --text-secondary: #495057;
+    --text-muted: #6c757d;
+    --text-accent: #0d6efd;
+
+    --accent-primary: #0d6efd;
+    --accent-secondary: #6610f2;
+    --accent-tertiary: #198754;
+
+    --border-color: #dee2e6;
+    --border-hover: #adb5bd;
+
+    --success: #198754;
+    --warning: #ffc107;
+    --error: #dc3545;
+}
+
+.theme-toggle {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 1200 !important;
+    background: var(--accent-primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    opacity: 0.9;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.theme-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb, 13, 110, 253), 0.25);
+}
+
+.theme-toggle svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* Animation for theme toggle */
+.theme-toggle .sun-icon-circle,
+.theme-toggle .sun-icon-line,
+.theme-toggle .moon-icon {
+    transition: all 0.3s ease;
+}
+
+.theme-toggle {
+    position: fixed !important;
+
+    bottom: calc(2rem + 3.75rem) !important; /* 60px above bottom */
+    right: 2rem !important;
+    top: auto !important;
+    z-index: 1200 !important;
+    background: var(--accent-primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.4);
+}
+
+@media (max-width: 768px) {
+    .theme-toggle {
+        bottom: calc(2rem + 3.5rem) !important;
+        right: 1.5rem !important;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .theme-toggle {
+        bottom: calc(2rem + 3rem) !important;
+        right: 1rem !important;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+const dynamicStyles = `
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(0);
+        animation: ripple-animation 0.6s linear;
+        pointer-events: none;
+    }
+
+    @keyframes ripple-animation {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+
+    .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+    }
+
+    .loading-spinner {
+        text-align: center;
+        color: var(--text-primary);
+    }
+
+    .spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid var(--border-color);
+        border-top: 3px solid var(--accent-primary);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 1rem;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .modal-project-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: var(--radius-lg);
+        margin-bottom: var(--space-xl);
+    }
+
+    .modal-project-title {
+        font-family: var(--font-heading);
+        font-size: var(--font-size-3xl);
+        color: var(--text-primary);
+        margin-bottom: var(--space-md);
+    }
+
+    .modal-project-description {
+        font-size: var(--font-size-lg);
+        color: var(--text-secondary);
+        margin-bottom: var(--space-xl);
+        line-height: 1.6;
+    }
+
+    .modal-project-details h3,
+    .modal-project-tech h3 {
+        font-family: var(--font-heading);
+        font-size: var(--font-size-xl);
+        color: var(--text-primary);
+        margin-bottom: var(--space-md);
+        margin-top: var(--space-xl);
+    }
+
+    .modal-project-long-description {
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin-bottom: var(--space-xl);
+    }
+
+    .modal-project-links {
+        display: flex;
+        gap: var(--space-lg);
+        margin-top: var(--space-xl);
+        flex-wrap: wrap;
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
 
 .hamburger-line {
     width: 1.5rem;
@@ -387,8 +597,6 @@ body {
     display: none;
 }
 
-/* ===== HERO SECTION ===== */
-/* ===== HERO SECTION ===== */
 .hero-section {
     min-height: 100vh;
     display: flex;
@@ -407,12 +615,12 @@ body {
     max-width: var(--container-max-width);
     margin: 0 auto;
     padding: 0 var(--container-padding);
-    min-height: 80vh; /* Ensure it takes up enough vertical space */
+    min-height: 80vh;
 }
 
 .hero-content {
     animation: fadeInUp 1s ease-out;
-    max-width: 700px; /* Limit width for better readability */
+    max-width: 700px;
 }
 
 .hero-greeting {
@@ -461,7 +669,7 @@ body {
     color: var(--text-secondary);
     margin-bottom: var(--space-2xl);
     line-height: 1.7;
-    max-width: 100%; /* Adjust to fit centered content */
+    max-width: 100%;
 }
 
 .hero-actions {
@@ -472,7 +680,7 @@ body {
 }
 
 .image-container {
-    display: none; /* Hide the image container */
+    display: none;
 }
 
 .scroll-indicator {
@@ -500,7 +708,6 @@ body {
     text-orientation: mixed;
 }
 
-/* ===== ABOUT SECTION ===== */
 .about-section {
     padding: var(--section-padding);
     background: var(--bg-secondary);
@@ -549,8 +756,6 @@ body {
         gap: var(--space-lg);
     }
 }
-
-
 
 .about-text p {
     font-size: var(--font-size-lg);
@@ -616,7 +821,6 @@ body {
     display: block;
 }
 
-/* ===== EXPERIENCE SECTION ===== */
 .experience-section {
     padding: var(--section-padding);
     background: var(--bg-primary);
@@ -701,7 +905,6 @@ body {
     font-weight: bold;
 }
 
-/* ===== PROJECTS SECTION ===== */
 .projects-section {
     padding: var(--section-padding);
     background: var(--bg-secondary);
@@ -822,7 +1025,6 @@ body {
     text-align: center;
 }
 
-/* ===== CONTACT SECTION ===== */
 .contact-section {
     padding: var(--section-padding);
     background: var(--bg-primary);
@@ -977,7 +1179,6 @@ body {
     border: 1px solid var(--error);
 }
 
-/* ===== FOOTER ===== */
 .footer {
     background: var(--bg-secondary);
     border-top: 1px solid var(--border-color);
@@ -1036,7 +1237,6 @@ body {
     font-size: var(--font-size-sm);
 }
 
-/* ===== BACK TO TOP BUTTON ===== */
 .back-to-top {
     position: fixed;
     bottom: 2rem;
@@ -1069,7 +1269,6 @@ body {
     box-shadow: 0 8px 25px rgba(0, 173, 181, 0.3);
 }
 
-/* ===== MODAL ===== */
 .modal {
     position: fixed;
     inset: 0;
@@ -1139,7 +1338,6 @@ body {
     padding: var(--space-3xl);
 }
 
-/* ===== ANIMATIONS ===== */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -1192,7 +1390,6 @@ body {
     }
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1024px) {
     :root {
         --container-padding: 1.5rem;
@@ -1219,69 +1416,68 @@ body {
         grid-template-columns: 1fr;
         gap: var(--space-lg);
     }
-    
-    /* ===== MEDIA QUERIES ===== */
+
     @media (max-width: 1200px) {
         .container {
             max-width: 90%;
         }
-        
+
         .theme-toggle {
             right: 20px;
         }
     }
-    
+
     @media (max-width: 992px) {
         html {
             font-size: 15px;
         }
-        
+
         .hero-content h1 {
             font-size: 3.5rem;
         }
-        
+
         .hero-content p {
             font-size: 1.1rem;
         }
-        
+
         .section-title {
             font-size: 2.2rem;
         }
-        
+
         /* Improved navbar for tablets */
         .navbar-collapse {
             background-color: var(--bg-secondary);
             padding: 1rem;
             border-radius: 0.5rem;
         }
-        
+
         .theme-toggle {
             top: 15px;
             right: 15px;
         }
     }
-    
+
     @media (max-width: 768px) {
         html {
             font-size: 14px;
         }
-        
+
         .hero-content h1 {
             font-size: 3rem;
         }
-        
+
         .section-title {
             font-size: 2rem;
         }
-        
+
         .project-card {
             margin-bottom: 2rem;
         }
-        
+
         .contact-form {
             padding: 1.5rem;
         }
-        
+
         /* Mobile navigation improvements */
         .navbar-collapse {
             background-color: var(--bg-secondary);
@@ -1291,17 +1487,17 @@ body {
             max-height: 80vh;
             overflow-y: auto;
         }
-        
+
         .navbar-nav .nav-link {
             padding: 0.75rem 1rem;
             border-radius: 0.25rem;
             margin: 0.25rem 0;
         }
-        
+
         .navbar-nav .nav-link:hover {
             background-color: var(--bg-tertiary);
         }
-        
+
         /* Adjust theme toggle for mobile */
         .theme-toggle {
             top: 15px;
@@ -1309,46 +1505,46 @@ body {
             width: 40px;
             height: 40px;
         }
-        
+
         .theme-toggle svg {
             width: 20px;
             height: 20px;
         }
     }
-    
+
     @media (max-width: 576px) {
         .hero-content h1 {
             font-size: 2.5rem;
         }
-        
+
         .hero-content p {
             font-size: 1rem;
         }
-        
+
         .section-title {
             font-size: 1.8rem;
         }
-        
+
         .skill-item {
             width: 100%;
         }
-        
+
         /* Improved spacing for small devices */
         .section {
             padding: 3rem 0;
         }
-        
+
         .navbar-brand {
             font-size: 1.2rem;
         }
-        
+
         /* Better touch targets for mobile */
-        .nav-link, 
+        .nav-link,
         .btn,
         .form-control {
             padding: 0.75rem;
         }
-        
+
         /* Adjust theme toggle for small mobile */
         .theme-toggle {
             top: 10px;
@@ -1357,22 +1553,22 @@ body {
             height: 38px;
         }
     }
-    
+
     /* Extra small devices */
     @media (max-width: 360px) {
         .hero-content h1 {
             font-size: 2.2rem;
         }
-        
+
         .section-title {
             font-size: 1.6rem;
         }
-        
+
         .container {
             padding-left: 0.75rem;
             padding-right: 0.75rem;
         }
-        
+
         /* Ensure theme toggle is accessible but not intrusive */
         .theme-toggle {
             top: 10px;
@@ -1380,7 +1576,7 @@ body {
             width: 35px;
             height: 35px;
         }
-        
+
         .theme-toggle svg {
             width: 18px;
             height: 18px;
@@ -1408,26 +1604,26 @@ body {
     .modal-body {
         padding: var(--space-xl);
     }
-    
+
     .theme-toggle {
         top: 15px;
         right: 55px;
         width: 30px;
         height: 30px;
     }
-    
+
     .theme-toggle svg {
         width: 16px;
         height: 16px;
     }
-    
+
     /* Ensure all content fits within the screen */
     .container {
         padding-left: 15px;
         padding-right: 15px;
         width: 100%;
     }
-    
+
     /* Improve touch targets for mobile */
     .nav-link, .btn, .social-link, .project-link {
         padding: 0.75rem;
@@ -1439,21 +1635,20 @@ body {
     html {
         font-size: 14px;
     }
-    
+
     .hero-name {
         font-size: 1.75rem;
     }
-    
+
     .hero-title {
         font-size: 1.1rem;
     }
-    
+
     .theme-toggle {
         right: 50px;
     }
 }
 
-/* ===== ACCESSIBILITY ===== */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -1468,7 +1663,6 @@ body {
     }
 }
 
-/* ===== PRINT STYLES ===== */
 @media print {
     .navbar,
     .back-to-top,
