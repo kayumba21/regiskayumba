@@ -359,21 +359,13 @@
     }
     
     /* Experience Section */
-    .experience-item {
-        padding: 20px;
+    .experience-card {
+        padding: 16px;
+        gap: 12px;
     }
-    
-    .experience-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .experience-title {
-        margin-bottom: 5px;
-    }
-    
-    .experience-duration {
-        margin-left: 0;
+
+    .experience-role {
+        font-size: 1rem;
     }
     
     /* Projects Section */
