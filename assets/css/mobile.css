@@ -359,21 +359,20 @@
     }
     
     /* Experience Section */
-    .experience-item {
-        padding: 20px;
+    .experience-card {
+        min-height: 184px;
+        grid-template-columns: 56px 1fr;
+        padding: 16px;
+        gap: 12px;
     }
-    
-    .experience-header {
-        flex-direction: column;
-        align-items: flex-start;
+
+    .experience-logo {
+        width: 56px;
+        height: 56px;
     }
-    
-    .experience-title {
-        margin-bottom: 5px;
-    }
-    
-    .experience-duration {
-        margin-left: 0;
+
+    .experience-role {
+        font-size: 1rem;
     }
     
     /* Projects Section */
