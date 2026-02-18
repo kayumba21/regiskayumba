@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="IT company placeholder image">
-  <rect width="160" height="160" rx="24" fill="#132238"/>
-  <path d="M34 44h92v72H34z" fill="#27406b"/>
-  <path d="M46 56h68v48H46z" fill="#d7e9ff"/>
-  <path d="M118 56h8v48h-8z" fill="#8ec5ff"/>
-  <circle cx="80" cy="80" r="10" fill="#27406b"/>
-  <path d="M76 76l8 4-8 4z" fill="#9fd1ff"/>
-  <text x="80" y="146" text-anchor="middle" fill="#d7e9ff" font-family="Inter, Arial" font-size="16" font-weight="700">VTC</text>
-</svg>

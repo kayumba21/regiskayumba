@@ -834,6 +834,7 @@ const dynamicStyles = `
 .experience-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-auto-rows: 1fr;
     gap: var(--space-xl);
 }
 
@@ -842,8 +843,11 @@ const dynamicStyles = `
     border: 1px solid var(--border-color);
     border-radius: var(--radius-xl);
     padding: var(--space-lg);
-    display: flex;
-    align-items: flex-start;
+    min-height: 208px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: start;
     gap: var(--space-lg);
     transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
 }
@@ -862,6 +866,11 @@ const dynamicStyles = `
     flex-shrink: 0;
     border: 1px solid var(--border-color);
     background: var(--bg-secondary);
+}
+
+.experience-card-body {
+    display: flex;
+    flex-direction: column;
 }
 
 .experience-role {
