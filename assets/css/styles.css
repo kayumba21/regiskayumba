@@ -365,7 +365,7 @@ body {
     height: 22px;
 }
 
-/* Animation for theme toggle */
+
 .theme-toggle .sun-icon-circle,
 .theme-toggle .sun-icon-line,
 .theme-toggle .moon-icon {
@@ -375,7 +375,7 @@ body {
 .theme-toggle {
     position: fixed !important;
 
-    bottom: calc(2rem + 3.75rem) !important; /* 60px above bottom */
+    bottom: calc(2rem + 3.75rem) !important;
     right: 2rem !important;
     top: auto !important;
     z-index: 1200 !important;
@@ -676,7 +676,7 @@ const dynamicStyles = `
     display: flex;
     gap: var(--space-lg);
     flex-wrap: wrap;
-    justify-content: center; /* Center buttons */
+    justify-content: center;
 }
 
 .image-container {
@@ -912,7 +912,7 @@ const dynamicStyles = `
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax for better mobile flow */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--space-2xl);
     margin-bottom: var(--space-3xl);
 }
@@ -1038,7 +1038,7 @@ const dynamicStyles = `
     margin: 0 auto;
 }
 
-/* Add media query for contact section in styles.css for smaller screens */
+
 @media (max-width: 768px) {
     .contact-content {
         grid-template-columns: 1fr;
@@ -1444,7 +1444,7 @@ const dynamicStyles = `
             font-size: 2.2rem;
         }
 
-        /* Improved navbar for tablets */
+
         .navbar-collapse {
             background-color: var(--bg-secondary);
             padding: 1rem;
@@ -1478,7 +1478,7 @@ const dynamicStyles = `
             padding: 1.5rem;
         }
 
-        /* Mobile navigation improvements */
+
         .navbar-collapse {
             background-color: var(--bg-secondary);
             padding: 1rem;
@@ -1498,7 +1498,7 @@ const dynamicStyles = `
             background-color: var(--bg-tertiary);
         }
 
-        /* Adjust theme toggle for mobile */
+
         .theme-toggle {
             top: 15px;
             right: 15px;
@@ -1529,7 +1529,7 @@ const dynamicStyles = `
             width: 100%;
         }
 
-        /* Improved spacing for small devices */
+
         .section {
             padding: 3rem 0;
         }
@@ -1538,14 +1538,14 @@ const dynamicStyles = `
             font-size: 1.2rem;
         }
 
-        /* Better touch targets for mobile */
+
         .nav-link,
         .btn,
         .form-control {
             padding: 0.75rem;
         }
 
-        /* Adjust theme toggle for small mobile */
+
         .theme-toggle {
             top: 10px;
             right: 10px;
@@ -1554,7 +1554,7 @@ const dynamicStyles = `
         }
     }
 
-    /* Extra small devices */
+
     @media (max-width: 360px) {
         .hero-content h1 {
             font-size: 2.2rem;
@@ -1569,7 +1569,7 @@ const dynamicStyles = `
             padding-right: 0.75rem;
         }
 
-        /* Ensure theme toggle is accessible but not intrusive */
+
         .theme-toggle {
             top: 10px;
             right: 10px;
@@ -1617,20 +1617,20 @@ const dynamicStyles = `
         height: 16px;
     }
 
-    /* Ensure all content fits within the screen */
+
     .container {
         padding-left: 15px;
         padding-right: 15px;
         width: 100%;
     }
 
-    /* Improve touch targets for mobile */
+
     .nav-link, .btn, .social-link, .project-link {
         padding: 0.75rem;
     }
 }
 
-/* Fix for very small screens */
+
 @media (max-width: 360px) {
     html {
         font-size: 14px;
