@@ -1,6 +1,6 @@
-/* Mobile Responsiveness Styles */
 
-/* Mobile Navigation Menu Styles */
+
+
 .mobile-menu-overlay {
     position: fixed;
     top: 0;
@@ -37,10 +37,10 @@
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     }
     .navbar-toggler {
-        display: block; /* Ensure it's visible on mobile */
+        display: block;
     }
     .navbar-nav {
-        /* Reset for mobile menu */
+
         margin-top: 0;
         width: 100%;
         flex-direction: column;
@@ -71,7 +71,7 @@
     background: transparent;
     padding: 0.5rem;
     cursor: pointer;
-    display: block; /* Ensure it's visible on mobile */
+    display: block;
 }
 
 .navbar-toggler-icon {
@@ -115,7 +115,7 @@
     bottom: 0;
 }
 
-/* Header Scroll Behavior */
+
 .navbar {
     transition: padding 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -137,7 +137,7 @@
     background: transparent;
     padding: 0.5rem;
     cursor: pointer;
-    display: none; /* Controlled by media query */
+    display: none;
     position: fixed;
     top: 20px;
     right: 20px;
@@ -145,7 +145,7 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background-color: var(--accent-primary); /* Use primary accent color */
+    background-color: var(--accent-primary);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
@@ -195,7 +195,7 @@
     bottom: 0;
 }
 
-/* Header Scroll Behavior */
+
 .navbar {
     transition: padding 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     position: fixed;
@@ -222,7 +222,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Media Queries */
+
 @media (max-width: 1199px) {
     .container {
         max-width: 90%;
@@ -231,14 +231,14 @@
 
 @media (min-width: 992px) {
     .navbar-nav {
-        display: flex !important; /* Override mobile display: none */
+        display: flex !important;
         align-items: center;
     }
-    
+
     .nav-item {
         margin: 0 10px;
     }
-    
+
     .nav-link {
         color: var(--text-primary);
         font-weight: 500;
@@ -246,20 +246,20 @@
         display: block;
     }
     .navbar-toggler {
-        display: none; /* Hide toggler on desktop */
+        display: none;
     }
 }
 
-/* Removed empty media query block */
 
-/* Mobile-specific styles for navigation and layout */
+
+
 @media (max-width: 991px) {
     .navbar-toggler {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    
+
     .navbar-collapse {
         position: fixed;
         top: 0;
@@ -271,94 +271,93 @@
         overflow-y: auto;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     }
-    
+
     .navbar-collapse.show {
         right: 0;
     }
-    
+
     .navbar-nav {
         margin-top: 2rem;
         width: 100%;
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     .nav-item {
         margin: 0;
         width: 100%;
     }
-    
+
     .nav-link {
         padding: 1rem 0;
         font-size: 1.1rem;
-        border-bottom: 1px solid var(--border-color); /* Use CSS variable for consistency */
+        border-bottom: 1px solid var(--border-color);
         display: block;
         text-align: left;
     }
-    
+
     .nav-link:hover {
-        color: var(--accent-primary); /* Use CSS variable for consistency */
+        color: var(--accent-primary);
         transform: translateX(5px);
     }
-    
+
     .resume-btn {
         margin-top: 1.5rem;
         width: 100%;
         text-align: center;
     }
-    
-    /* Adjust theme toggle position */
+
+
     .theme-toggle {
         top: 20px;
         right: 80px;
         position: fixed;
     }
-    
-    /* General layout adjustments */
+
+
     .hero-section {
-        padding: 80px 0 40px 0; /* Adjust padding for fixed header */
+        padding: 80px 0 40px 0;
     }
-    
+
     .hero-name {
         font-size: 2.5rem;
     }
-    
+
     .hero-title {
         font-size: 1.5rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1.1rem;
     }
-    
+
     .hero-actions {
         flex-direction: column;
         gap: 10px;
     }
-    
+
     .hero-actions .btn {
         width: 100%;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .section-subtitle {
         font-size: 1rem;
     }
-    
-    /* About Section */
+
+
     .about-content {
         flex-direction: column;
         gap: 30px;
     }
-    
+
     .about-text, .about-image {
         width: 100%;
     }
-    
-    /* Experience Section */
+   
     .experience-card {
         min-height: 184px;
         grid-template-columns: 56px 1fr;
@@ -374,40 +373,40 @@
     .experience-role {
         font-size: 1rem;
     }
-    
-    /* Projects Section */
+
+
     .project-card {
         flex-direction: column;
     }
-    
+
     .project-image, .project-details {
         width: 100%;
     }
-    
+
     .project-image {
         height: 200px;
     }
-    
-    /* Contact Section */
+
+
     .contact-form-container {
         padding: 30px;
     }
-    
+
     .contact-info-item {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .contact-info-item .icon-wrapper {
         margin-bottom: 10px;
     }
-    
-    /* Footer */
+
+
     .footer-content {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .footer-links {
         margin-top: 15px;
     }
@@ -417,27 +416,27 @@
     .container {
         padding: 0 15px;
     }
-    
+
     .hero-name {
         font-size: 2rem;
     }
-    
+
     .hero-title {
         font-size: 1.3rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1rem;
     }
-    
+
     .section-title {
         font-size: 1.75rem;
     }
-    
+
     .section-subtitle {
         font-size: 0.9rem;
     }
-    
+
     .btn {
         padding: 0.75rem 1.5rem;
         font-size: 0.9rem;
@@ -448,161 +447,161 @@
     .hero-name {
         font-size: 1.75rem;
     }
-    
+
     .hero-title {
         font-size: 1.1rem;
     }
-    
+
     .hero-subtitle {
         font-size: 0.9rem;
     }
-    
+
     .section-title {
         font-size: 1.5rem;
     }
-    
+
     .navbar-brand .logo-text {
         font-size: 1.1rem;
     }
-    
+
     .theme-toggle {
         right: 60px;
         width: 35px;
         height: 35px;
     }
-    
+
     .navbar-toggler {
         width: 35px;
         height: 35px;
     }
 }
 
-/* Additional responsive styles for medium and small screens */
+
 @media (max-width: 768px) {
     .container {
         max-width: 95%;
         padding: 0 15px;
     }
-    
+
     section {
         padding: 60px 0;
     }
-    
+
     h1 {
         font-size: 2.5rem;
     }
-    
+
     h2 {
         font-size: 2rem;
     }
-    
+
     .section-title {
         margin-bottom: 2rem;
     }
 }
 
-/* Ensure header button visibility on larger screens */
+
 @media (min-width: 1024px) {
     .navbar-brand {
         margin-right: 2rem;
     }
-    
+
     .navbar-nav {
         display: flex !important;
     }
-    
+
     .nav-item {
         display: block !important;
     }
-    
+
     .nav-link {
         display: block !important;
     }
-    
+
     .resume-btn {
         display: block !important;
     }
-    
-    /* Fix navbar display */
+
+
     .navbar-toggler {
         display: none;
     }
-    
+
     .navbar-nav {
         display: flex;
         align-items: center;
     }
-    
+
     .nav-item {
         margin: 0 0.75rem;
     }
-    
+
     .nav-link {
         padding: 0.5rem 0.75rem;
         font-weight: 500;
         position: relative;
     }
-    
+
     .resume-btn {
         margin-left: 1rem;
         padding: 0.5rem 1.25rem;
         display: inline-block;
     }
-    
-    /* Theme toggle position for desktop */
+
+
     .theme-toggle {
         position: relative;
         top: auto;
         right: auto;
         margin-left: 1rem;
     }
-    
-    /* Hide mobile elements */
+
+
     .navbar-toggler,
     .mobile-menu-overlay {
         display: none;
     }
 }
 
-/* Small screen optimizations */
+
 @media (max-width: 480px) {
     .theme-toggle {
         right: 70px;
         width: 36px;
         height: 36px;
     }
-    
+
     .navbar-toggler {
         width: 40px;
         height: 40px;
     }
-    
+
     h1 {
         font-size: 2rem;
     }
-    
+
     h2 {
         font-size: 1.75rem;
     }
-    
+
     p {
         font-size: 0.95rem;
     }
-    
+
     .section-title {
-    margin-bottom: 1rem; /* Fixed: added unit and closed properly */
+    margin-bottom: 1rem;
 }
 
 .theme-toggle {
     right: 20px;
-    z-index: 1070; /* Higher than mobile menu */
+    z-index: 1070;
     width: 44px;
     height: 44px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--accent-primary); /* Use primary accent color */
+    background-color: var(--accent-primary);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     border: none;
     cursor: pointer;
@@ -618,59 +617,59 @@
     height: 22px;
 }
 
-/* Fix text overlapping issues */
-/* The previous large media query block was replaced with a consolidated one. Removing this one to avoid duplication and conflicts. */
 
-/* Small Screen Adjustments */
+
+
+
 @media (max-width: 480px) {
     h1 {
         font-size: 2rem;
     }
-    
+
     h2 {
         font-size: 1.75rem;
     }
-    
+
     h3 {
         font-size: 1.25rem;
     }
-    
+
     p {
         font-size: 0.95rem;
         line-height: 1.6;
     }
-    
+
     .hero-content {
         padding: 40px 0;
     }
-    
+
     .hero-title {
         font-size: 1.8rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1rem;
     }
-    
+
     .section-title {
         font-size: 1.75rem;
         margin-bottom: 20px;
     }
-    
+
     .project-title {
         font-size: 1.25rem;
     }
-    
+
     .contact-form {
         padding: 15px;
     }
-    
-    /* Prevent text overflow */
+
+
     * {
         max-width: 100%;
         box-sizing: border-box;
     }
-    
+
     p, h1, h2, h3, h4, h5, h6, span, a {
         overflow-wrap: break-word;
         word-wrap: break-word;
@@ -683,28 +682,28 @@
     }
 }
 
-/* Large devices (desktops, less than 1200px) */
+
 @media (max-width: 1199.98px) {
     .container {
         max-width: 960px;
     }
 }
 
-/* Medium devices (tablets, less than 992px) */
+
 @media (max-width: 991.98px) {
     .container {
         max-width: 720px;
     }
 }
 
-/* Small devices (landscape phones, less than 768px) */
+
 @media (max-width: 767.98px) {
     .container {
         max-width: 540px;
     }
 }
 
-/* Extra small devices (portrait phones, less than 576px) */
+
 @media (max-width: 575.98px) {
     .container {
         max-width: 100%;
@@ -712,35 +711,35 @@
     }
 }
 
-/* Ensure header button visibility on larger screens */
+
 @media (min-width: 1024px) {
     .navbar {
         padding: 15px 0;
     }
-    
+
     .navbar-nav {
         display: flex;
         align-items: center;
     }
-    
+
     .nav-item {
         margin: 0 5px;
     }
-    
+
     .nav-link {
         padding: 8px 15px;
         border-radius: 4px;
         transition: all 0.2s ease;
     }
-    
+
     .nav-link:hover {
         background-color: rgba(var(--accent-rgb), 0.1);
     }
-    
+
     .resume-btn {
         margin-left: 10px;
     }
-    
+
     .theme-toggle {
         position: fixed;
         top: 20px;
@@ -748,125 +747,125 @@
     }
 }
 
-/* Large devices (desktops, less than 1200px) */
+
 @media (max-width: 1199.98px) {
     .container {
         max-width: 960px;
     }
-    
+
     .hero-content h1 {
         font-size: 3.5rem;
     }
-    
+
     .project-card {
         margin-bottom: 30px;
     }
 }
 
-/* Medium devices (tablets, less than 992px) */
+
 @media (max-width: 991.98px) {
     .container {
         max-width: 720px;
     }
-    
+
     .hero-content h1 {
         font-size: 3rem;
     }
-    
+
     .hero-content p {
         font-size: 1.1rem;
     }
-    
+
     .section-title {
         font-size: 2.5rem;
     }
-    
+
     .navbar-toggler {
         display: block;
     }
-    
+
     .navbar-collapse {
         display: block !important;
     }
-    
+
     .navbar-nav {
         flex-direction: column;
         margin-top: 2rem;
     }
-    
+
     .nav-item {
         margin: 0.5rem 0;
     }
-    
+
     .nav-link {
         padding: 0.75rem 1rem;
         display: block;
         width: 100%;
     }
-    
+
     .resume-btn {
         margin-top: 1rem;
         width: 100%;
         text-align: center;
     }
-    
+
     .theme-toggle {
         top: 15px;
         right: 70px;
     }
 }
 
-/* Small devices (landscape phones, less than 768px) */
+
 @media (max-width: 767.98px) {
     .container {
         max-width: 540px;
     }
-    
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
-    
+
     .hero-content p {
         font-size: 1rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
         margin-bottom: 1.5rem;
     }
-    
+
     .about-content {
         flex-direction: column;
     }
-    
+
     .about-image {
         margin-bottom: 30px;
         width: 100%;
         max-width: 300px;
         margin-right: 0;
     }
-    
+
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .contact-form-container {
         padding: 20px;
     }
-    
+
     .footer-content {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .footer-links {
         margin: 20px 0;
     }
-    
+
     .footer-social {
         justify-content: center;
     }
-    
+
     .theme-toggle {
         top: 15px;
         right: 15px;
@@ -875,82 +874,82 @@
     }
 }
 
-/* Extra small devices (portrait phones, less than 576px) */
+
 @media (max-width: 575.98px) {
     .container {
         width: 100%;
         padding-left: 15px;
         padding-right: 15px;
     }
-    
+
     .hero-content h1 {
         font-size: 2rem;
     }
-    
+
     .hero-content p {
         font-size: 0.9rem;
     }
-    
+
     .section-title {
         font-size: 1.8rem;
     }
-    
+
     .section {
         padding: 40px 0;
     }
-    
+
     .skills-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
     .project-card {
         margin-bottom: 20px;
     }
-    
+
     .contact-form-container {
         padding: 15px;
     }
-    
+
     .btn {
         padding: 8px 16px;
         font-size: 0.9rem;
     }
-    
+
     .theme-toggle {
         top: 10px;
         right: 10px;
         width: 35px;
         height: 35px;
     }
-    
+
     .navbar-brand {
         font-size: 1.2rem;
     }
 }
 
-/* Very small devices (small portrait phones, less than 360px) */
+
 @media (max-width: 359.98px) {
     .hero-content h1 {
         font-size: 1.8rem;
     }
-    
+
     .section-title {
         font-size: 1.5rem;
     }
-    
+
 .btn {
     padding: 6px 12px;
     font-size: 0.85rem;
 }
 }
 
-/* === Final Theme Toggle Position Override === */
+
 .theme-toggle {
     position: fixed;
-    bottom: calc(2rem + 3.75rem); /* stay above back-to-top */
+    bottom: calc(2rem + 3.75rem);
     right: 2rem;
-    top: auto; /* override any earlier top placement */
+    top: auto;
     z-index: 1200;
 }
 
