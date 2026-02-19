@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initTypingEffect();
     initScrollEffects();
     initExperienceTabs();
-    initProjectCardExpansion();
+/* initProjectCardExpansion(); */
     initContactForm();
     initBackToTop();
     initAnimations();
@@ -108,23 +108,7 @@ function initExperienceTabs() {
     });
 }
 
-function initProjectCardExpansion() {
-    const featuredCard = document.querySelector('.project-card-featured');
-    if (!featuredCard) return;
-
-    const toggleExpanded = () => featuredCard.classList.toggle('is-expanded');
-
-    featuredCard.addEventListener('click', e => {
-        if (e.target.closest('a')) return;
-        toggleExpanded();
-    });
-    featuredCard.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            toggleExpanded();
-        }
-    });
-}
+/* initProjectCardExpansion removed */
 
 function initContactForm() {
     const form = document.getElementById('contact-form');
@@ -202,7 +186,7 @@ function initBackToTop() {
 }
 
 function initAnimations() {
-    document.querySelectorAll('.project-card').forEach((card, i) => card.style.animationDelay = `${i * 0.1}s`);
+/* Project card animation removed */
 
     document.querySelectorAll('.social-link').forEach(link => {
         link.addEventListener('mouseenter', function() { this.style.transform = 'translateY(-2px) scale(1.05)'; });
@@ -239,26 +223,7 @@ function initKeyboardShortcuts() {
     });
 }
 
-function initAccessibility() {
-    const modal = document.getElementById('project-modal');
-    if (!modal) return;
-
-    modal.addEventListener('keydown', e => {
-        if (e.key === 'Tab') {
-            const focusable = Array.from(modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'));
-            const first = focusable[0];
-            const last = focusable[focusable.length - 1];
-
-            if (e.shiftKey && document.activeElement === first) {
-                last.focus();
-                e.preventDefault();
-            } else if (!e.shiftKey && document.activeElement === last) {
-                first.focus();
-                e.preventDefault();
-            }
-        }
-    });
-}
+/* initAccessibility removed */
 
 function initThemeToggle() {
     const toggle = document.getElementById('theme-toggle');
