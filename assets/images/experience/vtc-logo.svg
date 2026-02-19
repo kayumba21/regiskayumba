@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220" role="img" aria-label="Vision Technologies Company logo style mark">
+  <rect width="220" height="220" rx="28" fill="#f4f7fb"/>
+  <path d="M26 30l42 102L112 56l-10 72 18 0 34-64 22 0-55 96-25 0-10-69-36 69-29 0L4 30z" fill="#4b5397"/>
+  <path d="M84 30l24 66 48-66h40l-90 124h-31L36 30z" fill="#7ec7f6" opacity="0.95"/>
+  <text x="110" y="170" text-anchor="middle" font-family="Inter, Arial" font-size="18" fill="#5f6578" letter-spacing="1.8">VISION TECHNOLOGIES</text>
+  <text x="110" y="190" text-anchor="middle" font-family="Inter, Arial" font-size="10" fill="#5f6578" letter-spacing="2.4">COMPANY</text>
+</svg>
