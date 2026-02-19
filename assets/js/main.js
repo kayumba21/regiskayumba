@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initTypingEffect();
     initScrollEffects();
     initExperienceTabs();
-    initProjectModals();
+    initProjectCardExpansion();
     initContactForm();
     initBackToTop();
     initAnimations();
@@ -108,67 +108,21 @@ function initExperienceTabs() {
     });
 }
 
-function initProjectModals() {
-    const modal = document.getElementById('project-modal');
-    const modalBody = document.getElementById('modal-body');
+function initProjectCardExpansion() {
+    const featuredCard = document.querySelector('.project-card-featured');
+    if (!featuredCard) return;
 
-    const projects = {
-        1: { title: 'Number Guessing Game', description: 'A number guessing game where the user uses hints to guess a random number between 1-100 until they guess the correct number.', longDescription: 'This interactive number guessing game challenges users to guess a randomly generated number between 1 and 100. The game provides helpful hints to guide the player toward the correct answer.\n\nKey features include:\n• Random number generation between 1-100\n• Hint system to guide user guesses\n• Score tracking and attempt counting\n• Clean and intuitive user interface\n• Input validation and error handling\n\nThis project demonstrates fundamental programming concepts including loops, conditionals, user input handling, and game logic implementation.', technologies: ['Java'], github: 'https://github.com/kayumba21/Number-Guessing-Game', demo: 'https://github.com/kayumba21/Number-Guessing-Game', image: 'https://i.imgur.com/FjNSjBQ.png' },
-        2: { title: 'Bank System', description: 'A simple banking system that lets the user withdraw and deposit money in their bank account with secure transaction handling.', longDescription: 'This banking system simulation provides users with essential banking operations in a secure environment. The system handles basic financial transactions with proper validation and security measures.\n\nCore functionalities include:\n• Account balance management\n• Secure deposit operations\n• Withdrawal with balance validation\n• Transaction history tracking\n• User authentication system\n• Error handling for invalid operations\n\nThe project showcases object-oriented programming principles and demonstrates understanding of financial software requirements and security considerations.', technologies: ['Java'], github: 'https://github.com/kayumba21/Bank-System-Image', demo: 'https://github.com/kayumba21/Bank-System-Image', image: 'https://i.imgur.com/3T5apcF.png' },
-        3: { title: 'Employee Management System', description: 'An Employee Management System that counts bonuses according to age and current salary with comprehensive HR features.', longDescription: 'This comprehensive Employee Management System provides HR departments with tools to manage workforce data and calculate compensation packages. The system includes sophisticated bonus calculation algorithms based on employee demographics and performance metrics.\n\nAdvanced features include:\n• Employee profile and data management\n• Age-based bonus calculation algorithms\n• Salary management and payroll integration\n• Performance tracking and evaluation\n• Comprehensive reporting system\n• Data export and import capabilities\n\nThis project demonstrates advanced programming concepts including database management, complex calculations, and enterprise-level software architecture.', technologies: ['Java'], github: 'https://github.com/kayumba21/Employee-Management-System', demo: 'https://github.com/kayumba21/Employee-Management-System', image: 'https://i.imgur.com/lW1cEry.png' },
-        4: { title: 'Gaming Console Inventory System', description: 'Inventory Management System for Gaming Consoles that helps manage stock, record new inventory, view console specs and calculate bulk discounts.', longDescription: 'This specialized inventory management system is designed for gaming console retailers and distributors. It provides comprehensive tools for managing gaming hardware inventory with features tailored to the gaming industry.\n\nSpecialized features include:\n• Gaming console inventory tracking\n• Detailed console specifications database\n• Stock level monitoring and alerts\n• Bulk discount calculation system\n• New inventory recording and management\n• Sales reporting and analytics\n\nThe system helps gaming retailers optimize their inventory management while providing customers with detailed product information and competitive pricing through bulk discount features.', technologies: ['Java'], github: 'https://github.com/kayumba21/Gaming-Console-Inventory-System', demo: 'https://github.com/kayumba21/Gaming-Console-Inventory-System', image: 'https://i.imgur.com/2IX2dDY.png' },
-        5: { title: 'Museum of Culture', description: 'A simple landing page for a Museum built with modern web technologies featuring elegant design and smooth user experience.', longDescription: 'This elegant museum landing page showcases cultural artifacts and exhibitions through a modern, responsive web design. The project demonstrates advanced front-end development skills and attention to user experience design.\n\nDesign and technical features include:\n• Responsive design for all device types\n• Modern CSS techniques and animations\n• Optimized image galleries and exhibitions\n• Smooth scrolling and navigation\n• Accessibility-compliant design\n• Cross-browser compatibility\n\nThis project highlights expertise in modern web development practices, visual design principles, and creating engaging user experiences for cultural institutions.', technologies: ['HTML', 'CSS', 'JavaScript'], github: 'https://codepen.io/kayumba21/pen/oNVdqNm', demo: 'https://codepen.io/kayumba21/full/oNVdqNm', image: 'https://i.ibb.co/6HZ6Wm9/Allentown-Art-Museum-Gallery01-Discover-Lehigh-Valley-2450c76f-4de5-402c-a060-d0a8ff3b1d37.jpg' },
-        6: { title: 'Clock', description: 'A clean clock project with elegant design and smooth animations showcasing modern CSS techniques and responsive design.', longDescription: 'This sophisticated digital clock project demonstrates advanced CSS animation techniques and modern web design principles. The clock features smooth transitions and an elegant interface that adapts to different screen sizes.\n\nTechnical highlights include:\n• Real-time clock functionality with JavaScript\n• Smooth CSS animations and transitions\n• Responsive design for mobile and desktop\n• Modern typography and color schemes\n• Clean, minimalist user interface\n• Cross-browser compatibility\n\nThis project showcases proficiency in front-end technologies and demonstrates attention to detail in creating polished, professional web applications.', technologies: ['HTML', 'CSS'], github: 'https://codepen.io/kayumba21/pen/rNbdqbG', demo: 'https://codepen.io/kayumba21/full/rNbdqbG', image: 'https://i.ibb.co/tKBNThJ/Clock.jpg' },
-        7: { title: 'Bouncing Ball Game', description: 'A calming bouncing ball game project with interactive gameplay and smooth animations built using modern web technologies.', longDescription: 'This interactive bouncing ball game provides a relaxing gaming experience with smooth physics-based animations. The project demonstrates game development skills using web technologies and interactive design principles.\n\nGame features include:\n• Physics-based ball movement and collision detection\n• Interactive gameplay with user controls\n• Smooth animations and visual effects\n• Responsive game canvas for different screen sizes\n• Score tracking and game state management\n• Optimized performance for smooth gameplay\n\nThis project showcases game development capabilities using web technologies and demonstrates understanding of physics simulation, user interaction, and performance optimization in browser-based games.', technologies: ['HTML', 'CSS', 'JavaScript'], github: 'https://codepen.io/kayumba21/pen/rNbdqOG', demo: 'https://codepen.io/kayumba21/full/rNbdqOG', image: 'https://i.ibb.co/bgx4DpS/Bouncing-Ball-Game.jpg' }
-    };
+    const toggleExpanded = () => featuredCard.classList.toggle('is-expanded');
 
-    const closeModal = () => {
-        modal.classList.remove('active');
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-    };
-
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('click', function() {
-            const p = projects[this.getAttribute('data-project')];
-            if (p && modal && modalBody) {
-                modalBody.innerHTML = `
-                    <div class="modal-project">
-                        <img src="${p.image}" alt="${p.title}" class="modal-project-image">
-                        <div class="modal-project-content">
-                            <h2 class="modal-project-title">${p.title}</h2>
-                            <p class="modal-project-description">${p.description}</p>
-                            <div class="modal-project-details">
-                                <h3>Project Overview</h3>
-                                <div class="modal-project-long-description">${p.longDescription.replace(/\n/g, '<br>')}</div>
-                            </div>
-                            <div class="modal-project-tech">
-                                <h3>Technologies Used</h3>
-                                <div class="tech-tags">${p.technologies.map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>
-                            </div>
-                            <div class="modal-project-links">
-                                <a href="${p.github}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                    View on GitHub
-                                </a>
-                                ${p.demo !== '#' ? `<a href="${p.demo}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.364 5.636L16.95 7.05A7 7 0 1 0 19 12l1.414-1.414A9 9 0 1 1 18.364 5.636zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/><path d="M12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg>
-                                    Live Demo
-                                </a>` : ''}
-                            </div>
-                        </div>
-                    </div>`;
-                modal.classList.add('active');
-                modal.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-            }
-        });
+    featuredCard.addEventListener('click', e => {
+        if (e.target.closest('a')) return;
+        toggleExpanded();
     });
-
-    document.getElementById('modal-close')?.addEventListener('click', closeModal);
-    document.getElementById('modal-overlay')?.addEventListener('click', closeModal);
-    document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && modal?.classList.contains('active')) closeModal();
+    featuredCard.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleExpanded();
+        }
     });
 }
 
