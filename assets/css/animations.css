@@ -1,0 +1,53 @@
+/* ============================================================
+   ANIMATIONS.CSS — Keyframes and animation-specific styles
+   ============================================================ */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(2rem); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+@keyframes ripple-animation {
+    to { transform: scale(4); opacity: 0; }
+}
+
+@keyframes scrollWheel {
+    0%   { transform: translateY(0);    opacity: 1; }
+    100% { transform: translateY(20px); opacity: 0; }
+}
+
+@keyframes project-badge-pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.3; }
+}
+
+@keyframes penguin-bob {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50%       { transform: translateY(-3px) rotate(1deg); }
+}
+
+@keyframes penguin-type {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-2px); }
+}
+
+/* ── Penguin animations applied ── */
+.penguin-bob {
+    animation: penguin-bob 2.4s ease-in-out infinite;
+    transform-origin: bottom center;
+}
+
+.penguin-arm-type {
+    animation: penguin-type 0.35s ease-in-out infinite alternate;
+    transform-origin: top center;
+}

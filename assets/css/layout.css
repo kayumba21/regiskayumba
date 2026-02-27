@@ -1,0 +1,111 @@
+/* ============================================================
+   LAYOUT.CSS — Container, section structure, and shared layout
+   ============================================================ */
+
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    position: relative;
+    letter-spacing: -0.025em;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3rem;
+    height: 0.1875rem;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: var(--radius-full);
+}
+
+.section-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+/* ── Buttons ── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-width: 140px;
+    font-family: inherit;
+    letter-spacing: 0.025em;
+}
+
+.btn-primary {
+    background: var(--accent-primary);
+    color: white;
+    box-shadow: 0 2px 8px rgba(6, 182, 212, 0.2);
+}
+
+.btn-primary:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.35);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-card);
+    border-color: var(--accent-primary);
+    transform: translateY(-1px);
+}
+
+/* ── Responsive layout ── */
+@media (max-width: 1024px) {
+    :root {
+        --container-padding: 1.5rem;
+        --section-padding: 4rem 0;
+    }
+    .about-content { grid-template-columns: 1fr; }
+    .contact-content { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --space-4xl: 3rem;
+        --space-3xl: 2rem;
+        --space-2xl: 1.5rem;
+    }
+    .container { padding-left: 15px; padding-right: 15px; width: 100%; }
+}
+
+@media (max-width: 360px) {
+    html { font-size: 14px; }
+}

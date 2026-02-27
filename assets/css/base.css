@@ -1,0 +1,152 @@
+/* ============================================================
+   BASE.CSS — Reset, CSS variables, and global base styles
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    --bg-primary: #05060f;
+    --bg-secondary: #080b16;
+    --bg-tertiary: #0c0f1e;
+    --bg-card: #0e1121;
+    --bg-overlay: rgba(5, 6, 15, 0.97);
+
+    --text-primary: #e8eeff;
+    --text-secondary: #8899bb;
+    --text-muted: #3d4f6e;
+    --text-accent: #06b6d4;
+
+    --accent-primary: #06b6d4;
+    --accent-secondary: #8b5cf6;
+    --accent-tertiary: #10b981;
+
+    --border-color: #1a2240;
+    --border-hover: #2a3560;
+
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
+
+    --container-max-width: 1200px;
+    --container-padding: 2rem;
+    --section-padding: 6rem 0;
+
+    --transition-fast: 0.15s ease-in-out;
+    --transition-base: 0.3s ease-in-out;
+    --transition-slow: 0.5s ease-in-out;
+
+    --radius-sm: 0.25rem;
+    --radius-base: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-full: 9999px;
+
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-tooltip: 1070;
+}
+
+[data-theme="light"] {
+    --bg-primary: #f0f2f8;
+    --bg-secondary: #e8eaf2;
+    --bg-tertiary: #dde0ee;
+    --bg-card: #e4e7f2;
+    --bg-overlay: rgba(240, 242, 248, 0.97);
+
+    --text-primary: #1a1d2e;
+    --text-secondary: #3d4a6b;
+    --text-muted: #6c7a9c;
+    --text-accent: #0d6efd;
+
+    --accent-primary: #0d6efd;
+    --accent-secondary: #6610f2;
+    --accent-tertiary: #198754;
+
+    --border-color: #c8cedf;
+    --border-hover: #a8b0cc;
+
+    --success: #198754;
+    --warning: #ffc107;
+    --error: #dc3545;
+}
+
+/* ── Accessibility ── */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: currentColor;
+}
+
+/* ── Print ── */
+@media print {
+    .navbar, .back-to-top, .scroll-indicator, .fab-group { display: none; }
+    body { background: white; color: black; }
+    .section-title::after { background: black; }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    html { scroll-behavior: auto; }
+}
