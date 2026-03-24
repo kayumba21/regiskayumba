@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="Electronics store placeholder image">
+  <rect width="160" height="160" rx="24" fill="#132238"/>
+  <rect x="26" y="34" width="108" height="68" rx="10" fill="#27406b"/>
+  <rect x="36" y="44" width="88" height="48" rx="6" fill="#9fd1ff"/>
+  <rect x="64" y="110" width="32" height="8" rx="4" fill="#8ec5ff"/>
+  <rect x="54" y="118" width="52" height="8" rx="4" fill="#d7e9ff"/>
+  <text x="80" y="146" text-anchor="middle" fill="#d7e9ff" font-family="Inter, Arial" font-size="14" font-weight="700">ELECTRONICS</text>
+</svg>
