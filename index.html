@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Igirimbabazi Kayumba Regis - Computer Engineering Student | Aspiring Network Administrator, Security Engineer, Support Engineer">
+    <meta name="keywords" content="Regis, Kayumba, Computer Engineering, IT Support, Network Administrator, Security Engineer, Portfolio">
+    <meta name="author" content="Igirimbabazi Kayumba Regis">
+    <meta property="og:title" content="Regis's Portfolio - NOC Dashboard & Engineering Portfolio">
+    <meta property="og:description" content="Portfolio of Igirimbabazi Kayumba Regis - Specializing in IT Support, Network Administration, and Security Engineering">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kayumba21.github.io/REGIS-S-Portfolio/">
+    <title>Regis's Portfolio - Computer Engineering & Security Student</title>
+
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/layout.css">
+    <link rel="stylesheet" href="./assets/css/animations.css">
+    <link rel="stylesheet" href="./assets/css/components.css">
+    <link rel="stylesheet" href="./assets/css/sections.css">
+    <link rel="stylesheet" href="./assets/css/mobile.css">
+
+
+</head>
+<body>
+
+    <div class="fab-group">
+        <button class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+            </svg>
+        </button>
+    </div>
+
+    <nav class="navbar navbar-expand-lg" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container nav-container">
+            <a href="#home" class="navbar-brand nav-logo" aria-label="Home">
+                <span class="logo-text">REGIS.NOC</span>
+            </a>
+            <button class="navbar-toggler" id="nav-toggle" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto nav-menu" id="nav-menu" role="menubar">
+                    <li class="nav-item" role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+                    <li class="nav-item" role="none"><a href="#experience" class="nav-link" role="menuitem">Experience</a></li>
+                    <li class="nav-item" role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+                    <li class="nav-item" role="none"><a href="#education" class="nav-link" role="menuitem">Education</a></li>
+                    <li class="nav-item" role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+                    <li class="nav-item" role="none"><a href="./assets/documents/Igirimbabazi_Kayumba_Regis_CV.pdf" class="resume-btn" role="menuitem" download="Igirimbabazi_Kayumba_Regis_CV.pdf">Resume</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <section id="home" class="hero-section" aria-label="Introduction">
+            <div class="container-fluid hero-container-noc">
+                <div class="row g-4 align-items-center w-100 max-container-width">
+
+                    <div class="col-lg-6 hero-text-panel">
+                        <p class="hero-greeting">Hi, my name is</p>
+                        <h1 class="hero-name">
+                            <span class="typing-text" id="typing-text">Igirimbabazi Kayumba Regis</span>
+                        </h1>
+                        <h2 class="hero-title">Computer Engineering Student</h2>
+                        <p class="hero-subtitle">Network Administration & Security Infrastructure</p>
+                        <p class="hero-description">
+                            I specialize in designing resilient enterprise network topologies, configuring firewalls, and orchestrating secure IT infrastructure. Currently studying Computer Engineering at Vistula University, Warsaw.
+                        </p>
+                        <div class="hero-actions justify-content-start">
+                            <a href="#projects" class="btn btn-primary btn-noc"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg> Explore NOC</a>
+                            <a href="#contact" class="btn btn-secondary btn-noc"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg> Get in touch</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 hero-dashboard-panel">
+                        <div class="noc-dashboard-card">
+                            <div class="noc-terminal-container">
+                                <div class="terminal-body" id="terminal-body">
+                                    <div class="terminal-line output">
+                                        Type <span class="t-cmd">help</span> to view system commands.
+                                    </div>
+                                </div>
+                                <form class="terminal-form" id="terminal-form">
+                                    <span class="terminal-prompt">guest@regis.noc:~$</span>
+                                    <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" placeholder="type command..." aria-label="Terminal command line">
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section" aria-label="About me">
+            <div class="container max-container-width">
+                <h2 class="section-title-noc">About</h2>
+                <div class="row g-5 mt-2">
+
+                    <div class="col-lg-6">
+                        <div class="noc-panel-flat">
+                            <p class="about-lead">
+                                I am Regis, a computer engineering student with a deep interest in enterprise systems, network topologies, and security engineering.
+                            </p>
+                            <p>
+                                My journey in technology centers on understanding how network nodes communicate, how systems can be hardened against intrusions, and how complex routing protocols scale. My academic foundation at Vistula University complements practical operational experience in IT support systems, logistics coordination, and customer-facing troubleshooting.
+                            </p>
+                            <p>
+                                I focus on designing secure, redundant network architectures (including Cisco IOS configurations, VLAN segmentation, and perimeter firewall security rules). I aim to bridge rigorous technical implementations with seamless system administration.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="noc-skills-card">
+                            <h3 class="skills-card-title">Technical Capabilities</h3>
+                            <div class="skills-category">
+                                <span class="skills-cat-name">Network Administration</span>
+                                <p class="skills-cat-list">Cisco IOS, OSPF, HSRP, SVIs, VLANs, EtherChannel, VoIP</p>
+                            </div>
+                            <div class="skills-category">
+                                <span class="skills-cat-name">Security Infrastructure</span>
+                                <p class="skills-cat-list">Cisco ASA Firewall, Access Control Lists (ACL), BPDUGuard, Syslog</p>
+                            </div>
+                            <div class="skills-category">
+                                <span class="skills-cat-name">IT Support &amp; Systems</span>
+                                <p class="skills-cat-list">Windows/Linux Deployment, Active Directory, Hardware Diagnostics</p>
+                            </div>
+                            <div class="skills-category">
+                                <span class="skills-cat-name">Systems Development &amp; DB</span>
+                                <p class="skills-cat-list">HTML5, CSS3, JavaScript, MySQL, Automation Scripting</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience-section" aria-label="Work experience">
+            <div class="container max-container-width">
+                <h2 class="section-title-noc">Experience</h2>
+                <div class="experience-timeline mt-5">
+
+                    <div class="timeline-log-card">
+                        <div class="tl-header" onclick="toggleTimelineDetail(this)">
+                            <div class="tl-meta">
+                                <span class="tl-time-badge">2022.11 – 2023.09</span>
+                                <span class="tl-type-badge">IT SUPPORT / LOGISTICS</span>
+                            </div>
+                            <h3 class="tl-title">Junior IT Support / HR Assistant at <span class="tl-org">Rwanda Agriculture Board</span></h3>
+                            <svg class="tl-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </div>
+                        <div class="tl-details">
+                            <div class="tl-details-inner">
+                                <p>Provided desktop technical support, systems diagnostics, and software updates for municipal logistics and personnel offices.</p>
+                                <ul>
+                                    <li>Managed IT inventory logs, resolved hardware malfunctions, and performed operating systems deployments.</li>
+                                    <li>Assisted HR with databases updates and coordinated logistics networks operations.</li>
+                                    <li>Skills utilized: Technical Troubleshooting, Windows/Linux deployment, Syslog audit, Databases maintenance.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-log-card">
+                        <div class="tl-header" onclick="toggleTimelineDetail(this)">
+                            <div class="tl-meta">
+                                <span class="tl-time-badge">2022.05 – 2022.10</span>
+                                <span class="tl-type-badge">CLIENT OPERATIONS</span>
+                            </div>
+                            <h3 class="tl-title">Customer Service Specialist at <span class="tl-org">Kin Clothing Store</span></h3>
+                            <svg class="tl-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </div>
+                        <div class="tl-details">
+                            <div class="tl-details-inner">
+                                <p>Handled client communications, resolved logistics issues, and managed front-desk customer support databases.</p>
+                                <ul>
+                                    <li>Strengthened team collaboration and communications protocols.</li>
+                                    <li>Maintained checkout security software logs and inventory database records.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-log-card">
+                        <div class="tl-header" onclick="toggleTimelineDetail(this)">
+                            <div class="tl-meta">
+                                <span class="tl-time-badge">2021.08 – 2022.04</span>
+                                <span class="tl-type-badge">SALES OPERATIONS</span>
+                            </div>
+                            <h3 class="tl-title">Sales Associate at <span class="tl-org">Kin Electronic Shop</span></h3>
+                            <svg class="tl-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </div>
+                        <div class="tl-details">
+                            <div class="tl-details-inner">
+                                <p>Managed hardware retail sales, assessed client requirements for consumer devices, and performed basic configuration tests.</p>
+                                <ul>
+                                    <li>Advised clients on networking components, wireless routers, and systems configurations.</li>
+                                    <li>Tested customer returns for hardware defects and performed basic factory resets.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-log-card">
+                        <div class="tl-header" onclick="toggleTimelineDetail(this)">
+                            <div class="tl-meta">
+                                <span class="tl-time-badge">2021.09 – 2021.10</span>
+                                <span class="tl-type-badge">INTERNSHIP</span>
+                            </div>
+                            <h3 class="tl-title">IT Support Technician (Intern) at <span class="tl-org">Vision Technologies Co. Ltd</span></h3>
+                            <svg class="tl-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </div>
+                        <div class="tl-details">
+                            <div class="tl-details-inner">
+                                <p>Acquired hands-on exposure in corporate IT diagnostics, infrastructure operations, and end-device support during structured internship.</p>
+                                <ul>
+                                    <li>Configured local area network patch cables, assembled server cabinets, and tested local loopbacks.</li>
+                                    <li>Installed client operating systems and verified security patch deployments on office hardware.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section" aria-label="My projects">
+            <div class="container max-container-width">
+                <h2 class="section-title-noc">Projects</h2>
+
+                <div class="row g-4 mt-2">
+                    <div class="col-12">
+                        <div class="project-entry-card">
+                            <h3 class="project-entry-title">Cisco Enterprise Multi-Floor Topology</h3>
+                            <p class="project-entry-desc">
+                                A full enterprise subnetted architecture designed and simulated in Cisco Packet Tracer. Features HSRP router redundancy, OSPF routing, VLAN segmentation across floors, Cisco ASA Firewall zone separation, VoIP services, and wireless client association.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="project-entry-card">
+                            <h3 class="project-entry-title">Windows Batch Utilities Stack</h3>
+                            <p class="project-entry-desc">
+                                A library of utility and automation scripts designed for systems administrators. Simplifies recurring tasks like temp folder cleanup, active directory backups, network routes verification, and diagnostics reports generation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="firewall-sandbox" class="sandbox-section" aria-label="Firewall Security Sandbox">
+            <div class="container max-container-width">
+                <h2 class="section-title-noc">Security Sandbox</h2>
+                <div class="sandbox-hud mt-5">
+
+                    <div class="row g-4">
+                        <div class="col-lg-5">
+                            <div class="sandbox-control-panel">
+                                <div class="scp-header">Configure inbound traffic rules</div>
+
+                                <div class="scp-field">
+                                    <label for="fw-protocol">TARGET SERVICE / PORT</label>
+                                    <select id="fw-protocol" class="scp-select">
+                                        <option value="22">SSH (Port 22)</option>
+                                        <option value="80">HTTP (Port 80)</option>
+                                        <option value="443">HTTPS (Port 443)</option>
+                                        <option value="ICMP">ICMP Ping Request</option>
+                                    </select>
+                                </div>
+
+                                <div class="scp-field">
+                                    <label for="fw-source">TRAFFIC SOURCE LAYER</label>
+                                    <select id="fw-source" class="scp-select">
+                                        <option value="external">Untrusted External IP (Internet)</option>
+                                        <option value="admin">Authorized IT Admin IP (Internal)</option>
+                                    </select>
+                                </div>
+
+                                <div class="scp-field">
+                                    <label for="fw-action">DEFAULT ACL POLICY ACTION</label>
+                                    <select id="fw-action" class="scp-select">
+                                        <option value="ALLOW">PERMIT (Allow Traffic)</option>
+                                        <option value="DENY">DENY (Drop Traffic)</option>
+                                    </select>
+                                </div>
+
+                                <button class="btn btn-primary w-100 btn-noc mt-3" id="fw-run-btn">
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg> Deploy ACL &amp; Test Packet
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7">
+                            <div class="sandbox-simulator-card">
+                                <div class="ssc-header">Live firewall traffic simulation</div>
+
+                                <div class="ssc-flow-visual">
+                                    <div class="ssc-flow-line">
+                                        <div class="packet-particle" id="fw-packet-particle" style="display: none;"></div>
+                                    </div>
+
+                                    <div class="ssc-node" id="fw-node-client">
+                                        <div class="ssc-node-icon">💻</div>
+                                        <div class="ssc-node-name">Client PC</div>
+                                    </div>
+
+                                    <div class="ssc-node ssc-node-shield" id="fw-node-firewall">
+                                        <div class="ssc-node-icon">🧱</div>
+                                        <div class="ssc-node-name">ASA Firewall</div>
+                                    </div>
+
+                                    <div class="ssc-node" id="fw-node-server">
+                                        <div class="ssc-node-icon">🗄️</div>
+                                        <div class="ssc-node-name">Internal Server</div>
+                                    </div>
+                                </div>
+
+                                <div class="ssc-output-console">
+                                    <div class="ssc-console-title">Security logging console</div>
+                                    <div class="ssc-console-text" id="fw-status-text">
+                                        <span class="t-cyan">Select rules on the left, then click 'Deploy ACL' to trigger inbound packets...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="education-section" aria-label="Education">
+            <div class="container max-container-width">
+                <h2 class="section-title-noc">Education</h2>
+                <div class="education-grid mt-5">
+
+                    <div class="education-noc-card">
+                        <div class="enc-top">
+                            <div class="enc-logo-wrap">
+                                <span>🎓</span>
+                            </div>
+                            <div class="enc-meta">
+                                <h3>Vistula University</h3>
+                                <p class="enc-course">B.Sc. in Computer Engineering</p>
+                                <span class="enc-dates">Oct 2023 – Present</span>
+                            </div>
+                        </div>
+                        <div class="enc-body">
+                            <p>Specialization fields: Systems Architecture, Computer Networks, Security Infrastructure, Database Engineering, and Software Development Principles.</p>
+                            <div class="enc-badge-row">
+                                <span class="enc-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Enrolled</span>
+                                <span class="enc-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Warsaw, Poland</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section" aria-label="Contact information">
+            <div class="container max-container-width">
+                <h2 class="section-title-noc">Contact</h2>
+
+                <div class="row g-5 mt-4">
+                    <div class="col-lg-5">
+                        <div class="contact-channels-panel">
+                            <h3>Contact Details</h3>
+                            <p>Reach out about technical discussions, professional collaborations, or opportunities. I'll get back to you soon.</p>
+
+                            <div class="cc-list">
+                                <div class="cc-item">
+                                    <div class="cc-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                    </div>
+                                    <div class="cc-details">
+                                        <span class="cc-label">Email</span>
+                                        <a href="mailto:kayumbaregis03@gmail.com">kayumbaregis03@gmail.com</a>
+                                    </div>
+                                </div>
+                                <div class="cc-item">
+                                    <a href="https://rw.linkedin.com/in/kayumba-regis-4846161b8" target="_blank" rel="noopener noreferrer" class="cc-icon" aria-label="LinkedIn">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.7a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+                                    </a>
+                                    <div class="cc-details">
+                                        <span class="cc-label">LinkedIn</span>
+                                        <a href="https://rw.linkedin.com/in/kayumba-regis-4846161b8" target="_blank" rel="noopener noreferrer">Connect with Regis</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="secure-form-panel">
+                            <div class="sfp-header">Send a Message</div>
+
+                            <form class="contact-form-noc" id="contact-form" action="https://formspree.io/f/mzzappqa" method="POST">
+                                <div class="form-group-noc">
+                                    <label for="name" class="form-label-noc">NAME</label>
+                                    <input type="text" id="name" name="name" class="form-input-noc" required aria-describedby="name-error" placeholder="Your name">
+                                    <span class="form-error-noc" id="name-error"></span>
+                                </div>
+                                <div class="form-group-noc">
+                                    <label for="email" class="form-label-noc">EMAIL</label>
+                                    <input type="email" id="email" name="email" class="form-input-noc" required aria-describedby="email-error" placeholder="you@example.com">
+                                    <span class="form-error-noc" id="email-error"></span>
+                                </div>
+                                <div class="form-group-noc">
+                                    <label for="subject" class="form-label-noc">SUBJECT</label>
+                                    <input type="text" id="subject" name="subject" class="form-input-noc" required aria-describedby="subject-error" placeholder="What's this about?">
+                                    <span class="form-error-noc" id="subject-error"></span>
+                                </div>
+                                <div class="form-group-noc">
+                                    <label for="message" class="form-label-noc">MESSAGE</label>
+                                    <textarea id="message" name="message" class="form-textarea-noc" rows="5" required aria-describedby="message-error" placeholder="Tell me a bit about what you need..."></textarea>
+                                    <span class="form-error-noc" id="message-error"></span>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100 btn-noc form-submit">
+                                    <span class="btn-text"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg> Send Message</span>
+                                    <span class="btn-loading" style="display: none;">Sending...</span>
+                                </button>
+                                <div class="form-status-noc" id="form-status"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-wrapper">
+            <div class="footer-content-noc">
+                <div class="footer-info">
+                    <p class="footer-text">Built by Regis.</p>
+                </div>
+                <div class="footer-social-noc">
+                    <a href="https://github.com/kayumba21" class="social-link-noc" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://rw.linkedin.com/in/kayumba-regis-4846161b8" class="social-link-noc" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.7a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/_regis21/" class="social-link-noc" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://twitter.com/kwamabrooo" class="social-link-noc" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom-noc">
+                <p class="copyright">
+                    &copy; <span id="current-year"></span> Igirimbabazi Kayumba Regis. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/utils.js" defer></script>
+    <script src="./assets/js/navigation.js" defer></script>
+    <script src="./assets/js/animations.js" defer></script>
+    <script src="./assets/js/noc-terminal.js" defer></script>
+    <script src="./assets/js/noc-dashboard.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+
+    <script>
+
+        function toggleTimelineDetail(headerElement) {
+            const card = headerElement.parentElement;
+            const isOpen = card.classList.contains('active');
+
+            document.querySelectorAll('.timeline-log-card').forEach(c => c.classList.remove('active'));
+
+            if (!isOpen) {
+                card.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="Clothing store placeholder image">
+  <rect width="160" height="160" rx="24" fill="#132238"/>
+  <rect x="34" y="30" width="92" height="100" rx="14" fill="#27406b"/>
+  <path d="M56 52l10-16h28l10 16-12 10-8-12h-8l-8 12-12-10z" fill="#8ec5ff"/>
+  <rect x="62" y="68" width="36" height="48" rx="8" fill="#d7e9ff"/>
+  <text x="80" y="146" text-anchor="middle" fill="#d7e9ff" font-family="Inter, Arial" font-size="14" font-weight="700">CLOTHING</text>
+</svg>
