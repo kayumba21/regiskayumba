@@ -22,9 +22,7 @@ Regis bridges deep hardware/software expertise with operational experience in IT
 
     projects: `<span class="t-cyan">--- FEATURED PROJECTS ---</span>
   1. <span class="t-green">Cisco Enterprise Multi-Floor Topology</span>
-     - Full enterprise subnetted architecture designed and simulated in Cisco Packet Tracer.
-  2. <span class="t-green">Windows Batch Utilities Stack</span>
-     - A library of utility and automation scripts designed for systems administrators.`,
+     - Full enterprise subnetted architecture designed and simulated in Cisco Packet Tracer.`,
 
     contact: `<span class="t-cyan">--- COMMUNICATION CHANNELS ---</span>
   - <span class="t-green">Email:</span> <a href="mailto:kayumbaregis03@gmail.com" class="t-link">kayumbaregis03@gmail.com</a>
