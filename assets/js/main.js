@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     initThemeToggle();
     initNavigation();
-    initTypingEffect();
     initScrollEffects();
     initContactForm();
     initBackToTop();

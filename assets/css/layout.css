@@ -81,8 +81,8 @@
     font-size: var(--font-size-xs);
     font-weight: 600;
     letter-spacing: 0.12em;
-    color: #ffffff !important;
-    background: transparent;
+    color: #000000 !important;
+    background: #ffffff;
     border: 1px solid #ffffff;
     padding: 8px 18px;
     border-radius: var(--radius-sm);
@@ -93,7 +93,8 @@
     justify-content: center;
 }
 .resume-btn:hover {
-    background: #ffffff;
+    background: #e5e5e5;
+    border-color: #e5e5e5;
     color: #000000 !important;
 }
 

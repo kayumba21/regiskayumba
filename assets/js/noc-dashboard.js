@@ -38,7 +38,7 @@ const MOCK_SYSLOGS = [
     { type: 'SYS', text: 'DHCP-SRV: IP address 192.168.10.154 leased to client workstation-mac-7A.' },
     { type: 'NET', text: 'HSRP: SVI Vlan10 Standby router transitioned from active to standby.' },
     { type: 'SEC', text: 'PORT-SEC: BPDUGuard active on GigabitEthernet0/12; status: SECURE.' },
-    { type: 'SYS', text: 'NOC-MON: SNMP trap received: CPU Temperature NOMINAL (38C).' },
+    { type: 'SYS', text: 'SOC-MON: SNMP trap received: CPU Temperature NOMINAL (38C).' },
     { type: 'SEC', text: 'SSH: Management login audit: successful authentication for admin:regis from 192.168.1.100.' },
     { type: 'NET', text: 'LACP: EtherChannel bundle Port-channel1 status updated to active (2 member links).' },
     { type: 'SYS', text: 'IT-SUP: Windows PE OS image deployed successfully to support laboratory lab-B.' },

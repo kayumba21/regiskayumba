@@ -1,21 +1,3 @@
-function initTypingEffect() {
-    const elem = document.getElementById('typing-text');
-    if (!elem) return;
-    const text = 'Igirimbabazi Kayumba Regis';
-    let i = 0;
-    elem.textContent = '';
-
-    function type() {
-        if (i < text.length) {
-            elem.textContent += text.charAt(i++);
-            setTimeout(type, 95);
-        } else {
-            setTimeout(() => { elem.style.borderRight = 'none'; }, 2000);
-        }
-    }
-    setTimeout(type, 600);
-}
-
 function initScrollEffects() {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {

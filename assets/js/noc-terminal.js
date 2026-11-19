@@ -8,17 +8,16 @@ const TERMINAL_COMMANDS = {
   <span class="t-cmd">contact</span>    - Show communication channels`,
     
     about: `<span class="t-green">SYSTEM OWNER:</span> Igirimbabazi Kayumba Regis
-<span class="t-green">ROLE:</span> Computer Engineering Student, Aspiring Network Admin & Security Engineer
+<span class="t-green">ROLE:</span> Computer Engineering Student
 <span class="t-green">LOCATION:</span> Warsaw, Poland (Vistula University)
-<span class="t-green">MISSION:</span> Building highly secure, redundant, and efficient network infrastructures.
+<span class="t-green">MISSION:</span> Detecting, analysing and defending against cyber threats.
 Regis bridges deep hardware/software expertise with operational experience in IT support, customer service, and systems logistics.`,
 
     skills: `<span class="t-cyan">--- TECHNICAL CAPABILITIES ---</span>
   [PORT 22]  - <span class="t-green">Network Admin:</span> Cisco IOS, OSPF, HSRP, SVIs, EtherChannel, VLANs, VoIP, WLC Wireless
   [PORT 443] - <span class="t-green">Cyber Security:</span> Cisco ASA Firewall, Access Control Lists (ACL), BPDUGuard, Syslog Monitoring
-  [PORT 80]  - <span class="t-green">Systems Dev:</span> HTML5, CSS3, JavaScript, Bootstrap, Systems Scripting
-  [PORT 3389] - <span class="t-green">IT Support:</span> OS Deployment (Win/Linux), Hardware Troubleshooting, Active Directory, Systems Logistics
-  [PORT 3306] - <span class="t-green">Database Admin:</span> MySQL, Relational Database Management Systems`,
+  [PORT 80]  - <span class="t-green">Development:</span> HTML5, CSS3, JavaScript (basics)
+  [PORT 3389] - <span class="t-green">IT Support:</span> Windows &amp; Linux Installation, Hardware Troubleshooting, Active Directory (coursework)`,
 
     projects: `<span class="t-cyan">--- FEATURED PROJECTS ---</span>
   1. <span class="t-green">Cisco Enterprise Multi-Floor Topology</span>
@@ -48,7 +47,7 @@ function initWebTerminal() {
         
         if (!rawCmd) return;
         
-        appendTerminalLine(`<span class="t-prompt">guest@regis.noc:~$</span> ${escapeHTML(rawCmd)}`);
+        appendTerminalLine(`<span class="t-prompt">guest@regis.soc:~$</span> ${escapeHTML(rawCmd)}`);
         processCommand(rawCmd);
     });
 
